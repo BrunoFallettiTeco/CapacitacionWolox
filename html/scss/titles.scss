@@ -1,17 +1,8 @@
 .title {
-  display: inline-flex;
-  align-items: center;
-
-  h1 {
-    color: $black;
-    font: bold $text-big $page-font-family;
-    left: -20px;
-    position: relative;
-    top: 2px;
-  }
-
-  img {
-    height: $title-decoration-height;
-    width: $title-decoration-width;
-  }
+  background: url('../assets/triangle.svg') no-repeat;
+  background-size: $title-decoration-width $title-decoration-height;
+  color: $black;
+  font: bold $text-big $page-font-family;
+  height: $title-decoration-height;
+  padding: 33px 0 0 52px;
 }
