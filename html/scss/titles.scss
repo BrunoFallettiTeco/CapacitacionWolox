@@ -1,0 +1,17 @@
+.title {
+  display: inline-flex;
+  align-items: center;
+
+  h1 {
+    color: $black;
+    font: bold $text-big $page-font-family;
+    left: -20px;
+    position: relative;
+    top: 2px;
+  }
+
+  img {
+    height: $title-decoration-height;
+    width: $title-decoration-width;
+  }
+}
