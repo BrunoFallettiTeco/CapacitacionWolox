@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+$footer-height: 190px;
+$footer-logo-height: 60px;
+$nav-height: 90px;
 $nav-logo-height: 30px;
 $page-font-family: 'Roboto', sans-serif;
 $text-big: 24px;
@@ -10,10 +13,10 @@ $tech-box-border-radius: 3px;
 $tech-box-transition: margin 0.5s ease 0.2s;
 $text-medium: 16px;
 $text-small: 14px;
+$text-extra-small: 12px;
 $title-decoration-height: 90px;
 $title-decoration-width: 70px;
-$nav-height: 90px;
 
 .content {
-  padding: $nav-height 0 90px 0 ;
+  padding: $nav-height 0 0 0 ;
 }
