@@ -11,9 +11,9 @@
   .tech-box {
     align-items: center;
     border-radius: $tech-box-border-radius;
-    display: flex;
-    flex-direction: column;
-    flex-basis: auto;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
     margin: 15px;
     position: relative;
     width: $tech-box-width;
@@ -48,11 +48,10 @@
 }
 
 .tech1 {
+  align-content: center;
   border-right: 2px solid $green;
-  align-self: center;
   grid-area: tech1;
   height: 95%;
-  justify-content: center;
 }
 
 .tech2 {
