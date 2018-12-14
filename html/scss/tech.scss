@@ -1,11 +1,15 @@
 .tech-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 16px 165px 50px;
+  align-items: start;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "tech1  tech2  tech3"
+                       "tech1  tech4  tech5";
+  justify-content: center;
+  margin-bottom: 40px;
 
   .tech-box {
     align-items: center;
-    background: $green;
     border-radius: $tech-box-border-radius;
     display: flex;
     flex-direction: column;
@@ -13,27 +17,6 @@
     margin: 15px;
     position: relative;
     width: $tech-box-width;
-
-    &::before {
-      border: 1px solid $green;
-      border-radius: $tech-box-border-radius;
-      content: '';
-      height: 100%;
-      margin: -10px;
-      transition: $tech-box-transition;
-      -moz-transition: $tech-box-transition;
-      -o-transition: $tech-box-transition;
-      -webkit-transition: $tech-box-transition;
-      position: absolute;
-      width: 100%;
-      z-index: -1;
-    }
-
-    &:hover {
-      &::before {
-        margin: 7px;
-      }
-    }
 
     img {
       height: $tech-logo-size;
@@ -58,8 +41,32 @@
     h5 {
       font: $text-small $page-font-family;
       margin: 12px 5px 30px;
-      padding: 0 16px;
+      padding: 0 15px;
       text-align: center;
     }
   }
+}
+
+.tech1 {
+  border-right: 2px solid $green;
+  align-self: center;
+  grid-area: tech1;
+  height: 95%;
+  justify-content: center;
+}
+
+.tech2 {
+  grid-area: tech2;
+}
+
+.tech3 {
+  grid-area: tech3;
+}
+
+.tech4 {
+  grid-area: tech4;
+}
+
+.tech5 {
+  grid-area: tech5;
 }
