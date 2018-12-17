@@ -20,3 +20,9 @@ $title-decoration-width: 70px;
 .content {
   padding: $nav-height 0 0 0 ;
 }
+
+@media only screen and (max-width: 1023px) {
+  .content {
+    padding: ($nav-height * 2) 0 0 0 ;
+  }
+}
