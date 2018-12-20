@@ -13,6 +13,7 @@ export function delay(time) {
   });
 }
 
-export function asyncDelay() {
-
+export async function asyncDelay(time) {
+  const delayedTime = await delay(time);
+  return delayedTime;
 }
