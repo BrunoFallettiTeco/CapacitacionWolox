@@ -1,4 +1,4 @@
-import { isArray } from './utils';
+import isArray from './utils';
 
 export function min(...nums) {
   if (!nums.length) return undefined;
@@ -8,6 +8,6 @@ export function min(...nums) {
   return Math.min(...nums[0]);
 }
 
-export function copy() {
-
+export function copy(object) {
+  return { ...object };
 }
