@@ -14,3 +14,6 @@ node_modules/
 
 ## package lock json ##
 package-lock.json
+
+## vs code ##
+.vscode/
