@@ -24,9 +24,7 @@ export function reverseMerge(...arrays) {
 }
 
 export function filterAttribs(object) {
-  //const clone = copy(object);
   var a,b,rest;
   ({ a, b, ...rest } = copy(object));
-  console.log("BRUNO ===> " + rest);
   return rest;
 }
