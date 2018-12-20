@@ -11,7 +11,14 @@ export function min(...nums) {
 export function copy(object) {
   if (!isArray(object)) {
     return { ...object };
-  } else {
-    return [ ...object ];
   }
+  return [...object];
+}
+
+export function reverseMerge(...arrays) {
+  const result = [];
+  for (let i = 0; i < arrays.length; i += 1) {
+    result.unshift(...arrays[i]);
+  }
+  return result;
 }
