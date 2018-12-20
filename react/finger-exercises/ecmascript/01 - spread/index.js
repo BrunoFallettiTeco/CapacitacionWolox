@@ -9,5 +9,9 @@ export function min(...nums) {
 }
 
 export function copy(object) {
-  return { ...object };
+  if (!isArray(object)) {
+    return { ...object };
+  } else {
+    return [ ...object ];
+  }
 }
