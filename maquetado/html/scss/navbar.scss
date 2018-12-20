@@ -1,0 +1,41 @@
+.navbar {
+  background: $white;
+  box-shadow: 0 5px 20px $grey;
+  height: $nav-height;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav-wolox {
+  background: url('../assets/wolox_logo.svg') no-repeat;
+  background-size: 200px $nav-logo-height;
+  height: $nav-height;
+  margin: 30px 10px;
+  position: absolute;
+  width: 100%;
+
+  span {
+    color: $black;
+    font: $text-big $page-font-family;
+    padding: 0 0 0 85%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .navbar {
+    box-shadow: 0 20px 30px $grey;
+    height: $nav-height * 3;
+  }
+
+  .nav-wolox {
+    background-size: auto auto;
+    left: 5%;
+    position: relative;
+    top: 20%;
+
+    span {
+      display: none;
+    }
+  }
+}
