@@ -1,0 +1,30 @@
+.footer {
+  margin: 100px 0 0 0;
+  vertical-align: bottom;
+  width: 100%;
+  bottom: 0px;
+  height: $footer-height;
+  background: $blue;
+
+  .foot-wolox {
+    position: relative;
+    height: 75%;
+    width: 100%;
+    background: url('../assets/wolox_logo_white.svg') no-repeat;
+    background-size: 100% $footer-logo-height;
+    background-position: 50% 100%;
+    color: $white;
+    font: $text-big $page-font-family;
+    text-align: center;
+    padding: 40px 0 0 0;
+  }
+
+  p {
+    position: relative;
+    text-align: right;
+    color: $white;
+    font: $text-extra-small $page-font-family;
+    float: right;
+    padding: 10px 20px 0 0;
+  }
+}
