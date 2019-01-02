@@ -1,0 +1,51 @@
+.footer {
+  background: $blue;
+  height: $footer-height;
+  margin: 100px 0 0 0;
+  vertical-align: bottom;
+  width: 100%;
+
+  .foot-wolox {
+    background: url('../assets/wolox_logo_white.svg') no-repeat;
+    background-size: 100% $footer-logo-height;
+    background-position: 50% 100%;
+    color: $white;
+    font: $text-big $page-font-family;
+    height: 75%;
+    padding: 40px 0 0 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  p {
+    color: $white;
+    float: right;
+    font: $text-extra-small $page-font-family;
+    padding: 10px 20px 0 0;
+    position: relative;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .footer {
+    height: $footer-height * 2.4;
+
+    .foot-wolox {
+      background-position: 50% 60%;
+      background-size: 100% ($footer-logo-height * 1.5);
+      font: ($text-medium * 2.3) $page-font-family;
+      padding: 90px 0 0 0;
+      vertical-align: middle;
+    }
+
+    p {
+      float: none;
+      font: ($text-extra-small * 1.5) $page-font-family;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
