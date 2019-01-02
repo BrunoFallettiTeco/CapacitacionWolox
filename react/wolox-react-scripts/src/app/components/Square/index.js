@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import './styles.scss';
@@ -12,3 +13,8 @@ export default function Square(props) {
       </button>
     );
 }
+
+Square.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  value: PropTypes.string,
+};

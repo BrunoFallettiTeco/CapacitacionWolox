@@ -95,7 +95,7 @@ export default class Game extends React.Component {
 
     return (
       <React.Fragment>
-        <div class="errors"></div>
+        <div className="errors"></div>
         <div className="game">
           <div className="game-board">
             <Board
