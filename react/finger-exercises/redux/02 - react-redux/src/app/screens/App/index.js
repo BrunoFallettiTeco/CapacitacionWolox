@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import store from '@redux/store';
+import actions from '@redux/book/actions';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 
@@ -19,6 +20,7 @@ class App extends Component {
       const { books, bookSelected } = store.getState();
       this.setState({ books, bookSelected });
     });
+    store.dispatch(actions.getBooks());
     // TODO to implement the dispatch
   }
 
