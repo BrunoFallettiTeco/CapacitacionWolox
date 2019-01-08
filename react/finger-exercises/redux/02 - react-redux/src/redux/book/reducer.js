@@ -21,8 +21,11 @@ function reducer(state = initialState, action) {
       };
     case actions.ADD_ITEM: // TODO to implement the logic
       return { ...state };
-    case actions.REMOVE_ITEM: // TODO to implement the logic
-      return { ...state };
+    case actions.REMOVE_ITEM:
+      return {
+        ...state,
+        bookSelected: state.bookSelected.filter(book => book.id !== action.payload)
+      };
     case actions.SEARCH_ITEM:
       return {
         ...state,

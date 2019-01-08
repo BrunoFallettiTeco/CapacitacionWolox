@@ -27,7 +27,6 @@ class App extends Component {
     store.dispatch(actions.searchBook(value));
   };
 
-  // TODO to implement the dispatch
   addToCart = item => {
     store.dispatch(actions.addToCart(item));
   };
@@ -35,8 +34,9 @@ class App extends Component {
   // TODO to implement the dispatch
   addItem = itemId => {};
 
-  // TODO to implement the dispatch
-  removeItem = itemId => {};
+  removeItem = itemId => {
+    store.dispatch(actions.removeItem(itemId));
+  };
 
   CONFIGURATION_BUTTON = {
     add: {
