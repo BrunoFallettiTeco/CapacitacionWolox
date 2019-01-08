@@ -21,11 +21,12 @@ class App extends Component {
       this.setState({ books, bookSelected });
     });
     store.dispatch(actions.getBooks());
-    // TODO to implement the dispatch
   }
 
   // TODO to implement the dispatch
-  onSearch = value => {};
+  onSearch = value => {
+    store.dispatch(actions.searchBook(value));
+  };
 
   // TODO to implement the dispatch
   addToCart = item => {};
