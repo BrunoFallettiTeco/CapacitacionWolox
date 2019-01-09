@@ -19,8 +19,17 @@ function reducer(state = initialState, action) {
         ...state,
         bookSelected: state.bookSelected.concat(action.payload)
       };
-    case actions.ADD_ITEM: // TODO to implement the logic
-      return { ...state };
+    case actions.ADD_ITEM:
+      return {
+        ...state,
+        bookSelected: state.bookSelected.map(item => {
+          if (item.id === action.payload) {
+            item.quantity += 1;
+            return item;
+          }
+          return item;
+        })
+      };
     case actions.REMOVE_ITEM:
       return {
         ...state,

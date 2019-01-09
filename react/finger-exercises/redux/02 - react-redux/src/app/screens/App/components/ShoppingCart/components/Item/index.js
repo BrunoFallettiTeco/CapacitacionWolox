@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { func } from 'prop-types';
+import { func, number } from 'prop-types';
 import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
 
@@ -17,12 +17,12 @@ class Item extends PureComponent {
   };
 
   render() {
-    const { item } = this.props;
+    const { item, quantity } = this.props;
     return (
       <li className={styles.item}>
         <h3 className={styles.title}>{item.name}</h3>
         <span className={styles.contentButtons}>
-          <span className={styles.quantity}>{item.quantity}</span>
+          <span className={styles.quantity}>{quantity}</span>
           <Button className={styles.buttonCart} onClick={this.addItem}>
             <i className="fa fa-plus" />
           </Button>
@@ -37,6 +37,7 @@ class Item extends PureComponent {
 
 Item.propTypes = {
   item: bookSelectedPropType,
+  quantity: number.isRequired,
   addItem: func.isRequired,
   removeItem: func.isRequired
 };

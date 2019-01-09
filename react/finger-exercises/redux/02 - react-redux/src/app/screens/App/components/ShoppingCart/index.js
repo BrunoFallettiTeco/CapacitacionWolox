@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import { arrayOf, func } from 'prop-types';
 import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
@@ -6,7 +6,7 @@ import Button from '@components/Button';
 import Item from './components/Item';
 import styles from './styles.scss';
 
-class ShoppingCart extends PureComponent {
+class ShoppingCart extends Component {
   state = {
     open: false
   };
@@ -21,7 +21,9 @@ class ShoppingCart extends PureComponent {
 
   renderItem = item => {
     const { addItem, removeItem } = this.props;
-    return <Item key={item.id} item={item} addItem={addItem} removeItem={removeItem} />;
+    return (
+      <Item key={item.id} item={item} quantity={item.quantity} addItem={addItem} removeItem={removeItem} />
+    );
   };
 
   render() {
