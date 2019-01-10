@@ -1,15 +1,22 @@
 import React, { Fragment, Component } from 'react';
-import { arrayOf, func } from 'prop-types';
-import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
+import store from '@redux/store';
 
 import Item from './components/Item';
 import styles from './styles.scss';
 
 class ShoppingCart extends Component {
   state = {
-    open: false
+    open: false,
+    bookSelected: []
   };
+
+  componentDidMount() {
+    store.subscribe(() => {
+      const { bookSelected } = store.getState();
+      this.setState({ bookSelected });
+    });
+  }
 
   toggleContent = () => {
     this.setState(prevState => ({
@@ -19,15 +26,9 @@ class ShoppingCart extends Component {
 
   total = (accumulator, currentValue) => accumulator + currentValue.quantity;
 
-  renderItem = item => {
-    const { addItem, removeItem } = this.props;
-    return (
-      <Item key={item.id} item={item} quantity={item.quantity} addItem={addItem} removeItem={removeItem} />
-    );
-  };
+  renderItem = item => <Item key={item.id} item={item} quantity={item.quantity} />;
 
   render() {
-    const { data } = this.props;
     return (
       <Fragment>
         <Button className={styles.buttonCart} onClick={this.toggleContent}>
@@ -35,18 +36,14 @@ class ShoppingCart extends Component {
         </Button>
         <div className={`${styles.container} ${this.state.open ? styles.open : ''}`}>
           <h1 className={styles.title}>Cart</h1>
-          <ul className={styles.content}>{data.map(this.renderItem)}</ul>
-          <h2 className={`${styles.title} ${styles.total}`}>Total: {data.reduce(this.total, 0)}</h2>
+          <ul className={styles.content}>{this.state.bookSelected.map(this.renderItem)}</ul>
+          <h2 className={`${styles.title} ${styles.total}`}>
+            Total: {this.state.bookSelected.reduce(this.total, 0)}
+          </h2>
         </div>
       </Fragment>
     );
   }
 }
-
-ShoppingCart.propTypes = {
-  data: arrayOf(bookSelectedPropType).isRequired,
-  addItem: func.isRequired,
-  removeItem: func.isRequired
-};
 
 export default ShoppingCart;

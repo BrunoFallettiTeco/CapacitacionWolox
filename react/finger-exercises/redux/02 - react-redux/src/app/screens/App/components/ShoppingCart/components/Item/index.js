@@ -1,19 +1,21 @@
 import React, { PureComponent } from 'react';
-import { func, number } from 'prop-types';
+import { number } from 'prop-types';
 import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
+import actions from '@redux/book/actions';
+import store from '@redux/store';
 
 import styles from './styles.scss';
 
 class Item extends PureComponent {
   addItem = () => {
-    const { item, addItem } = this.props;
-    addItem(item.id);
+    const { item } = this.props;
+    store.dispatch(actions.addItem(item.id));
   };
 
   removeItem = () => {
-    const { item, removeItem } = this.props;
-    removeItem(item.id);
+    const { item } = this.props;
+    store.dispatch(actions.removeItem(item.id));
   };
 
   render() {
@@ -37,9 +39,7 @@ class Item extends PureComponent {
 
 Item.propTypes = {
   item: bookSelectedPropType,
-  quantity: number.isRequired,
-  addItem: func.isRequired,
-  removeItem: func.isRequired
+  quantity: number.isRequired
 };
 
 export default Item;

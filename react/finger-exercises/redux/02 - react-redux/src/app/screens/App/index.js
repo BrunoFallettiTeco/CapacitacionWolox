@@ -31,7 +31,6 @@ class App extends Component {
     store.dispatch(actions.addToCart(item));
   };
 
-  // TODO to implement the dispatch
   addItem = itemId => {
     store.dispatch(actions.addItem(itemId));
   };
@@ -72,9 +71,7 @@ class App extends Component {
             </div>
           )}
         </div>
-        {this.state.bookSelected.length ? (
-          <ShoppingCart data={this.state.bookSelected} addItem={this.addItem} removeItem={this.removeItem} />
-        ) : null}
+        {this.state.bookSelected.length ? <ShoppingCart /> : null}
         <Footer />
       </Fragment>
     );
